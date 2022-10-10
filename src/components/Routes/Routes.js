@@ -10,8 +10,11 @@ const Routes = () => {
       path: "/",
       element: <Main></Main>,
       children: [
-        { path: "/", element: <Home></Home> },
-        { path: "home", element: <Home></Home> },
+        {
+          path: "home",
+          element: <Home></Home>,
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+        },
         { path: "blog", element: <Blog></Blog> },
       ],
       errorElement: <ErrorPage></ErrorPage>,

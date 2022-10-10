@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useLoaderData } from "react-router-dom";
+import Quiz from "../Quiz/Quiz";
+import "./Home.css";
 const Home = () => {
+  const quizs = useLoaderData();
+
   return (
     <div>
       <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
@@ -37,6 +40,11 @@ const Home = () => {
             alt=""
           />
         </div>
+      </div>
+      <div className="lg:m-6 quizs">
+        {quizs.data.map((quiz) => (
+          <Quiz key={quiz.id} quiz={quiz}></Quiz>
+        ))}
       </div>
     </div>
   );

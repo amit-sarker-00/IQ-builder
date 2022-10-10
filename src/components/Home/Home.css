@@ -1,0 +1,16 @@
+.quizs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  .quizs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 468px) {
+  .quizs {
+    grid-template-columns: 1fr;
+  }
+}

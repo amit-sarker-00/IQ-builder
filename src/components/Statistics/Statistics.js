@@ -12,10 +12,8 @@ import {
 
 const Statistics = () => {
   const quizs = useLoaderData();
-  const { name, total } = quizs.data;
-  console.log(quizs);
   return (
-    <div className="flex items-center justify-center mt-10">
+    <div className="flex items-center justify-center mt-5">
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart
           width={500}

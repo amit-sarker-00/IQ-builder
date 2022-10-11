@@ -5,6 +5,8 @@ import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
 import QuizDetails from "../QuizDetails/QuizDetails";
+import Statistics from "../Statistics/Statistics";
+import Topics from "../Topics/Topics";
 const Routes = () => {
   const router = createBrowserRouter([
     {
@@ -15,12 +17,19 @@ const Routes = () => {
         {
           path: "/",
           element: <Home></Home>,
-          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
         },
         {
           path: "home",
           element: <Home></Home>,
+        },
+        {
+          path: "topics",
+          element: <Topics></Topics>,
           loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+        },
+        {
+          path: "statistics",
+          element: <Statistics></Statistics>,
         },
         { path: "blog", element: <Blog></Blog> },
         {

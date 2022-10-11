@@ -1,39 +1,44 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  ReferenceLine,
-  ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  AreaChart,
+  Area,
 } from "recharts";
 
 const Statistics = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const quizs = useLoaderData();
+  const { name, total } = quizs.data;
+  console.log(quizs);
   return (
-    <div>
-      <h1>this is Statistic</h1>
-      <ResponsiveContainer width={700} height="80%">
+    <div className="flex items-center justify-center mt-10">
+      <ResponsiveContainer width="100%" height={200}>
         <AreaChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+          width={500}
+          height={200}
+          data={quizs.data}
+          syncId="anyId"
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
         >
+          <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-          <ReferenceLine x="Page C" stroke="green" label="Min PAGE" />
-          <ReferenceLine
-            y={4000}
-            label="Max"
-            stroke="red"
-            strokeDasharray="3 3"
+          <Area
+            type="monotone"
+            dataKey="total"
+            stroke="#8884d8"
+            fill="#8884d8"
           />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
         </AreaChart>
       </ResponsiveContainer>
     </div>

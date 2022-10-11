@@ -19,3 +19,5 @@
 7.add a blog section where you can see some question answer 8. this site is responsive
 
 ## live site link is here
+
+link: https://relaxed-starlight-776907.netlify.app/

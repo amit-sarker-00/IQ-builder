@@ -17,13 +17,12 @@ const Quiz = ({ quiz }) => {
           </p>
         </div>
         <div className=" font-extrabold ">
-          <Link
-            to={`/quiz/${id}`}
-            className="border bg-cyan-400 p-2 hover:bg-slate-500 rounded-md"
-          >
-            Quiz
-            <FontAwesomeIcon icon={faArrowRightLong} />
-          </Link>
+          <button className="border bg-cyan-400 p-2 hover:bg-slate-500 rounded-md">
+            <Link to={`/quiz/${id}`}>
+              Quiz
+              <FontAwesomeIcon icon={faArrowRightLong} />
+            </Link>
+          </button>
         </div>
       </div>
     </div>

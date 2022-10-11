@@ -7,7 +7,7 @@ const QuizDetails = () => {
   //   console.log(quizDetails);
   return (
     <div>
-      <div className="text-center text-4xl font-bold text-blue-400">
+      <div className="text-center text-4xl font-bold text-blue-400 my-8">
         <h1>Quiz of {quizDetails.name}</h1>
       </div>
       {quizDetails.questions.map((quizDetail) => (

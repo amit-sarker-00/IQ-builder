@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Swal from "sweetalert2";
+
 const Option = ({ option, correctAnswer }) => {
-  console.log(option);
   const handelQuiz = (option, correctOption) => {
     if (option === correctOption) {
       Swal.fire({
@@ -20,8 +20,8 @@ const Option = ({ option, correctAnswer }) => {
     }
   };
   return (
-    <div className="p-2">
-      <h1 className="bg-lime-200 border rounded-md shadow-md">
+    <div className="p-2 ">
+      <h1 className="bg-slate-300 border rounded-md shadow-md p-2">
         <input
           onClick={() => handelQuiz(option, correctAnswer)}
           type="radio"
